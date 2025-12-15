@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+body { font-family: Georgia; margin: 0; }
+
+/* Header */
+header {
+  padding: 60px;
+  text-align: center;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0 10px;
+}
+.nav-links { display: flex; }
+.nav-links a {
+  color: white; padding: 14px 20px;
+  text-decoration: none; text-align: center;
+}
+.nav-links a:hover { background-color: #ddd; color: black; }
+.social-icons { display: flex; }
+.social-icons a {
+  color: white; padding: 14px;
+  text-decoration: none; font-size: 18px;
+}
+.social-icons a:hover { color: #ddd; }
+
+/* Layout */
+.container { display: flex; flex-wrap: wrap; }
+.side { flex: 30%; background-color: #E6E6FA; padding: 20px; }
+.main { flex: 70%; background-color: #FFFAFA; padding: 20px; }
+
+/* Images */
+img {
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+  max-width: 100%;
+}
+img:hover { transform: scale(1.05); }
+.gallery-item { cursor: pointer; }
+
+/* Bubble headings */
+.side h2 {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffffff, #f8f8ff);
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  text-align: center;
+  background: #41403C;
+  color: white;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #DC143C;
+  color: white;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+#scrollTopBtn:hover { background-color: #a50f2d; }
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+  .container, .navbar { flex-direction: column; }
+  .nav-links, .social-icons { justify-content: center; }
+}
+
+/* Lightbox (JS-driven) */
+#lightboxOverlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+}
+#lightboxContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  text-align: center;
+  width: min(90vw, 1100px);
+}
+#lightboxImg {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+#lightboxCaption {
+  margin-top: 12px;
+  color: #ddd;
+  font-size: 16px;
+}
+
+.lb-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 36px;
+  padding: 12px 18px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
+}
+#lbPrev { left: 20px; }
+#lbNext { right: 20px; }
+#lbClose {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  line-height: 1;
+  background: none;
+}
+
+.lb-btn:hover { background: rgba(0,0,0,0.6); }
+</style>
+</head>
+<body>
+
+<!-- Note -->
+<div style="background:#8B0000;padding:5px;text-align:center;">
+  <h4><marquee>Nureen Nasira's Webpage</marquee></h4>
+</div>
+
+<!-- Header -->
+<header>
+  <h1>Gallery</h1>
+  <p>Memories & Moments</p>
+</header>
+
+<!-- Navigation -->
+<div class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bio.html">Biodata</a>
+    <a href="edu.html">Education</a>
+    <a href="family.html">Family</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+  <div class="social-icons">
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container">
+  <div class="side">
+    <h2>Raya 2025</h2>
+    <p>The highlight of this year</p>
+    <img class="gallery-item" src="raya.jpg" alt="Raya 2025" style="width:100%; height:200px; object-fit:cover;">
+    <img class="gallery-item" src="raya2.jpg" alt="Raya 2025 (2)" style="width:100%; height:200px; object-fit:cover;">
+
+    <h2>Videos</h2>
+    <video width="100%" height="225" controls>
+      <source src="lis.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video width="100%" height="225" controls>
+      <source src="rexkl.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video width="100%" height="225" controls>
+      <source src="cafe.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="main">
+    <h2>More Family Pics!</h2>
+    <img class="gallery-item" src="fam3.jpg" alt="Family - Melaka" style="height:200px; object-fit:cover;">
+    <img class="gallery-item" src="eat.jpg" alt="Family - Cafe in Cameron" style="height:200px; object-fit:cover;">
+    <img class="gallery-item" src="mama-abah.jpg" alt="Family - mama & abah" style="height:200px; object-fit:cover;">
+    <img class="gallery-item" src="kids.jpg" alt="Family - Birthday" style="height:200px; object-fit:cover;">
+    <img class="gallery-item" src="cousin.jpg" alt="Family - With cousin" style="height:200px; object-fit:cover;">
+    <img class="gallery-item" src="sibs2.jpg" alt="Family - Siblings" style="height:200px; object-fit:cover;">
+    <img class="gallery-item" src="sibs.jpg" alt="Family - Siblings" style="height:200px; object-fit:cover;">
+    <p>Snapshots with my family — warm, chaotic, and full of love.</p>
+    <br>
+
+    <h2>Friends</h2>
+    <img class="gallery-item" src="um.jpg" alt="Friends - UM" style="height:250px; object-fit:cover;">
+    <img class="gallery-item" src="betas.jpg" alt="Friends - Betas Theatre Night" style="height:250px; object-fit:cover;">
+    <img class="gallery-item" src="sano.jpg" alt="Friends - Movie" style="height:250px; object-fit:cover;">
+    <img class="gallery-item" src="far.jpg" alt="Friends - Far and Mochi" style="height:250px; object-fit:cover;">
+    <img class="gallery-item" src="im.jpg" alt="Friends - Gang" style="height:250px; object-fit:cover;">
+    <img class="gallery-item" src="self.jpg" alt="Friends - Fun date" style="height:250px; object-fit:cover;">
+    <img class="gallery-item" src="flower.jpg" alt="Friends - Kina and R" style="height:250px; object-fit:cover;">
+    <p>Adventures with my closest friends, from study sessions to late-night hangouts.</p>
+    <br>
+  </div>
+</div>
+
+<!-- Lightbox Overlay -->
+<div id="lightboxOverlay" aria-hidden="true">
+  <button id="lbClose" class="lb-btn" aria-label="Close">&times;</button>
+  <button id="lbPrev" class="lb-btn" aria-label="Previous">&#10094;</button>
+  <button id="lbNext" class="lb-btn" aria-label="Next">&#10095;</button>
+
+  <div id="lightboxContent">
+    <img id="lightboxImg" src="" alt="">
+    <div id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <h2>Developed by Noen</h2>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+/* Scroll-to-top */
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.addEventListener('scroll', () => {
+  scrollTopBtn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+});
+function topFunction() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+/* Lightbox logic */
+const overlay = document.getElementById('lightboxOverlay');
+const imgEl = document.getElementById('lightboxImg');
+const captionEl = document.getElementById('lightboxCaption');
+const btnPrev = document.getElementById('lbPrev');
+const btnNext = document.getElementById('lbNext');
+const btnClose = document.getElementById('lbClose');
+
+const items = Array.from(document.querySelectorAll('.gallery-item'));
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  const el = items[currentIndex];
+  imgEl.src = el.src;
+  imgEl.alt = el.alt || '';
+  captionEl.textContent = el.alt || '';
+  overlay.style.display = 'block';
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  overlay.style.display = 'none';
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % items.length;
+  openLightbox(currentIndex);
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + items.length) % items.length;
+  openLightbox(currentIndex);
+}
+
+items.forEach((el, idx) => {
+  el.addEventListener('click', () => openLightbox(idx));
+});
+
+btnNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+btnPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+btnClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+
+/* Close when clicking outside the image */
+overlay.addEventListener('click', (e) => {
+  const content = document.getElementById('lightboxContent');
+  if (!content.contains(e.target)) closeLightbox();
+});
+
+/* Keyboard support */
+document.addEventListener('keydown', (e) => {
+  if (overlay.style.display === 'block') {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  }
+});
+</script>
+
+</body>
+</html>

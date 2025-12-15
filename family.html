@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Family</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Georgia;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  border-left: 5px solid #DC143C;
+  padding-left: 10px;
+}
+
+/* Header */
+header {
+  padding: 60px;
+  text-align: center;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #333;
+}
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.container {  
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.side {
+  flex: 25%;
+  background-color: #E6E6FA;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Main content */
+.main {
+  flex: 70%;
+  background-color: #E6E6FA;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Card-style sections */
+section {
+  background: #fafafa;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+img {
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Family grid */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.family-card {
+  background: #B0E0E6;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.family-card:hover {
+  transform: translateY(-5px);
+}
+.family-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  background: #41403C;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #DC143C;
+  color: white;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+#scrollTopBtn:hover { background-color: #a50f2d; }
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .container { flex-direction: column; }
+  .side, .main { flex: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- Note -->
+<div style="background:#8B0000;padding:5px;text-align:center;">
+  <h4><marquee>Nureen Nasira's Webpage</marquee></h4>
+</div>
+
+<!-- Header -->
+<header>
+  <h1>My Family</h1>
+  <p>Where love and support begin</p>
+</header>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="bio.html">Biodata</a>
+  <a href="edu.html">Education</a>
+  <a href="family.html">Family</a>
+  <a href="gallery.html">Gallery</a>
+</div>
+
+<!-- Content Container -->
+<div class="container">
+  <!-- Sidebar -->
+  <div class="side">
+    <h2>Family Picss</h2>
+    <p><em>"Family is not an important thing, it's everything." -Michael J. Fox</em></p>
+    <img src="fam1.jpg" alt="Family group" style="width:90%; border-radius:8px;">
+<img src="raya.jpg" alt="Family group" style="width:90%; border-radius:8px;">
+<img src="fam2.jpg" alt="Family group" style="width:90%; border-radius:8px;">
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <section id="family">
+      <h2><i class="fas fa-users"></i> Meet My Family</h2>
+      <p>Here’s a glimpse of the people (and pets!) who make my life brighter.</p>
+      
+      <div class="family-grid">
+        <div class="family-card">
+          <img src="dad.jpg" alt="Dad">
+          <h3><i class="fas fa-male"></i> Dad</h3>
+          <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+        </div>
+        <div class="family-card">
+          <img src="mom.jpg" alt="Mom">
+          <h3><i class="fas fa-female"></i> Mom</h3>
+          <p>This is mother. The light of my life, our pillar of strenght. The most caring and hardworking woman I've ever known. I think we'd fall apart without her. She's prettier up close.</p>
+        </div>
+        <div class="family-card">
+          <img src="bio-photo.jpg" alt="me">
+          <h3><i class="fas fa-child"></i> Me</h3>
+          <p>Hey that's me. The eldest child and the most ordinary out of the bunch. I try hard not to be performative so much. I have no motto. Just live laugh love i guess.</p>
+        </div>
+        <div class="family-card">
+          <img src="fiya.jpg" alt="Sibling">
+          <h3><i class="fas fa-child"></i> Sister</h3>
+          <p>This is my dear sister, Sofiya. She's 17 this year. Her meme knowledge is outstanding. We like to make fun out of everything, and most of the time its not even <strong>that</strong> funny.</p>
+        </div>
+        <div class="family-card">
+          <img src="adan.jpg" alt="brother">
+          <h3><i class="fas fa-child"></i> Brother</h3>
+          <p>This is the brother, Adan. The most rebellious one. He's still at that teenage phase I suppose we all went through. Still love him dearly.</p>
+        </div>
+  <div class="family-card">
+          <img src="cat.jpg" alt="Cats">
+          <h3><i class="fas fa-cat"></i> Kit</h3>
+          <p>Meet Kit, Kit the cat! The actual youngest in this family. He's an orange. Need I say more?</p>
+        </div>
+ <div class="family-card">
+          <img src="ciko.jpg" alt="Cats">
+          <h3><i class="fas fa-cat"></i> Ciko</h3>
+          <p>And this is Ciko. We found him in a parking lot in Putrajaya. So if you're ever lost in that area, give him a call.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <h2>Developed by Noen</h2>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+let scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+}
+function topFunction() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

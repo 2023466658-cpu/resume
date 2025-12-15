@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Georgia;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  border-left: 5px solid #DC143C;
+  padding-left: 10px;
+}
+
+/* Header */
+header {
+  padding: 60px;
+  text-align: center;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #333;
+}
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.side {
+  flex: 25%;
+  background-color: #E6E6FA;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Main content */
+.main {
+  flex: 50%;
+  background-color: #E6E6FA;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Card-style sections */
+section {
+  background: #fafafa;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Images */
+img {
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+  max-width: 100%;
+}
+img:hover { transform: scale(1.05); }
+
+/* Resume Button */
+.resume-btn {
+  display: inline-block;
+  background-color: #DC143C;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.resume-btn i {
+  margin-right: 8px;
+}
+.resume-btn:hover {
+  background-color: #a50f2d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  background: #41403C;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #DC143C;
+  color: white;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+#scrollTopBtn:hover { background-color: #a50f2d; }
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .container { flex-direction: column; }
+  .side, .main { flex: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- Note -->
+<div style="background:#8B0000;padding:5px;text-align:center;">
+  <h4><marquee>Nureen Nasira's Webpage</marquee></h4>
+</div>
+
+<!-- Header -->
+<header>
+  <h1>My Website</h1>
+  <p>Detailed stuff about me..</p>
+</header>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="bio.html">Biodata</a>
+  <a href="edu.html">Education</a>
+  <a href="family.html">Family</a>
+  <a href="gallery.html">Gallery</a>
+</div>
+
+<!-- Content Container -->
+<div class="container">
+  <!-- Sidebar -->
+  <div class="side">
+    <h2>Favourite Video Game Clips</h2>
+    <p>Life is Strange: Before the Storm (2015)</p>
+    <video width="100%" height="240" controls>
+      <source src="lis.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <p>Lego Star Wars: The Skywalker Saga (2022)</p>
+    <video width="100%" height="240" controls>
+      <source src="sw.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <p>Borderlands 3 (2020)</p>
+    <video width="100%" height="240" controls>
+      <source src="bl3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h2>BIODATA</h2>
+
+    <section id="personal-info">
+      <h2><i class="fas fa-user"></i> Personal Information</h2>
+      <p><strong>Name:</strong> Nureen Nasira Binti Rosdi</p>
+      <p><strong>Date of Birth:</strong> 21<sup>st</sup> June, 2005</p>
+      <p><strong>Gender:</strong> Female</p>
+      <p><strong>Address:</strong> Kajang, Selangor</p>
+          </section>
+
+    <section id="skills">
+      <h2><i class="fas fa-tools"></i> Skills</h2>
+      <ul>
+        <li><strong>Technical:</strong> Microsoft Word, PowerPoint, C++, Canva</li>
+        <li><strong>Languages:</strong> English, Malay, French & German (A1)</li>
+        <li><strong>Soft Skills:</strong> Punctuality, Teamwork, Adaptability</li>
+      </ul>
+    </section>
+
+    <section id="hobbies">
+      <h2><i class="fas fa-gamepad"></i> Hobbies</h2>
+      <ul>
+        <li>Reading</li>
+        <li>Writing</li>
+        <li>Watching movies</li>
+        <li>Cafe hunting</li>
+        <li>Playing video games</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:nureenfiya0508@gmail.com">nureenfiya0508@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+60133941900">+60 133941900</a></p>
+      <p>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      </p>
+<!-- Resume Download Button -->
+      <p>
+        <a href="resume.pdf" download class="resume-btn">
+          <i class="fas fa-file-download"></i> Download My Resume
+        </a>
+      </p>
+
+    </section>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <h2>Developed by Noen</h2>
+</footer>
+<!-- Scroll to Top Button -->
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+let scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+}
+function topFunction() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
