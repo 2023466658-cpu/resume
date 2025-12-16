@@ -1,0 +1,136 @@
+<!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+}
+
+body {
+  font-family: Georgia;
+  margin: 0;
+}
+
+/* Header */
+header {
+  padding: 60px;
+  text-align: center;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  color: white;
+}
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* separates links left, icons right */
+  align-items: center;
+  background-color: #333;
+  padding: 0 10px;
+}
+
+/* Left nav links */
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-links a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Social icons on right */
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: white;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #ddd;
+}
+
+/* Column container */
+.container {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #E6E6FA;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: #FFFAFA;
+  padding: 20px;
+}
+
+/* Images */
+img {
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+  max-width: 100%;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Bubble headings only for sidebar h2 */
+.side h2 {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffffff, #f8f8ff); /* soft gradient */
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  text-align: center;
+  background: #41403C;
+  color: white;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
+  .nav-links, .social-icons {
+    justify-content: center;
+  }
+}
+<!-- Navigation Bar -->
+<div class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="bio.html">Biodata</a>
+    <a href="edu.html">Education</a>
+    <a href="family.html">Family</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+  <div class="social-icons">
+    <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+  </div>
+</div>
